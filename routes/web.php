@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/indice{nombre}', function ($nombre) {
-    return view('paginas.indice',compact('nombre'));
+/*Route::get('/libros{nombre}', function ($nombre) {
+    return view('libros.indiceLibros',compact('nombre'));
+});*/
+
+Route::get('/libros', function () {
+    return view('libros.indiceLibros');
 });
