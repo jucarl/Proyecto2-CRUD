@@ -20,3 +20,6 @@ Route::get('/', function () {
 Route::get('/indice{nombre}', function ($nombre) {
     return view('paginas.indice',compact('nombre'));
 });
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
