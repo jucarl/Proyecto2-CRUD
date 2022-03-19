@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LibroController;
+use Illuminate\Routing\Router;
+use Illuminate\Support\Facades\DB;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +21,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/*Route::get('/libros{nombre}', function ($nombre) {
-    return view('libros.indiceLibros',compact('nombre'));
-});*/
+Route::resource('/libros', LibroController::class);
 
-Route::get('/libros', function () {
-    return view('libros.indiceLibros');
-});
