@@ -1,6 +1,6 @@
 <x-navbar>
 
-    <div class="main-content flex-1 mt-12 mx-12">
+    <div class="main-content flex-1 mt-16 mx-12">
         <h1 class="text-blue-500 font-bold text-lg">Catalogo de Libros</h1>
         @csrf
         <a href="libros/create" class="block  text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded my-2">AÑADIR LIBRO</a>

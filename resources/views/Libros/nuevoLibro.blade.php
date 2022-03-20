@@ -1,5 +1,5 @@
 <x-navbar>
-    <div class="main-content flex-1 mt-12 mx-12">
+    <div class="main-content flex-1 mt-14 mx-12">
         @isset($libro)
             <h1 class="text-blue-500 font-bold text-lg">Editar Libro</h1>
         @else
@@ -21,30 +21,30 @@
 
 
         @isset($libro)
-        <form action="/libros/{{$libro->id }}" method="post" class="grid grid-cols-1 gap-1 mt-4 sm:grid-cols-2"> <!----actualizar-->
+        <form action="/libros/{{$libro->id }}" method="post" class="grid grid-cols-1 gap-1 mt-6 sm:grid-cols-1"> <!----actualizar-->
             @method ('PATCH')
         @else
-        <form action="/libros" method="post" class="grid grid-cols-1 gap-1 mt-4 sm:grid-cols-2">
+        <form action="/libros" method="post" class="grid grid-cols-1 gap-1 mt-6 sm:grid-cols-1">
         @endisset
 
             @csrf   <!--Proteccion contra ataque -->
             <label class="text-gray-700" for="libro">Nombre del Libro</label><br>
-            <input class="w-1/14 mt-2 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" type="text" name="titulo" value="{{isset($libro) ? $libro->titulo : ''}}">
+            <input class="w-1/14 mt-1 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" type="text" name="titulo" value="{{isset($libro) ? $libro->titulo : ''}}">
             <br>
             <label class="text-gray-700" for="autor">Autor</label><br>
-            <input class="w-full mt-2 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" type="text" name="autor" value="{{isset($libro) ? $libro->autor : ''}}">
+            <input class="w-full mt-1 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" type="text" name="autor" value="{{isset($libro) ? $libro->autor : ''}}">
             <br>
             <label class="text-gray-700" for="editorial">Editorial</label><br>
-            <input class="w-full mt-2 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" type="text" name="editorial" value="{{isset($libro) ? $libro->editorial : ''}}">
+            <input class="w-full mt-1 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" type="text" name="editorial" value="{{isset($libro) ? $libro->editorial : ''}}">
             <br>
             <label class="text-gray-700" for="publicacion">Fecha de Publicación</label><br>
-            <input class="w-full mt-2 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" type="date" name="publicacion" value="{{isset($libro) ? $libro->publicacion : ''}}">
+            <input class="w-full mt-1 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" type="date" name="publicacion" value="{{isset($libro) ? $libro->publicacion : ''}}">
             <br>
             <label class="text-gray-700" for="paginas">Numero de Páginas</label><br>
-            <input class="w-full mt-2 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" type="text" name="paginas" value="{{isset($libro) ? $libro->paginas : ''}}">
+            <input class="w-full mt-1 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" type="text" name="paginas" value="{{isset($libro) ? $libro->paginas : ''}}">
             <br>
             <label class="text-gray-700" for="descripcion">Descripcion</label><br>
-            <textarea class="w-full mt-2 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" name="descripcion" id="descripcion" cols="10" rows="4">
+            <textarea class="w-full mt-1 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" name="descripcion" id="descripcion" cols="10" rows="4">
                 {{isset($libro) ? $libro->descripcion : '' }}
             </textarea>
             <br>

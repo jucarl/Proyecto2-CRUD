@@ -16,10 +16,10 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    return view('indice');
+    return view('auth.login');
 });
 
-Route::resource('/libros', LibroController::class);
+Route::resource('/libros', LibroController::class)->middleware('auth');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
